@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "todo-firebase",
+    "slug": "todo-firebase",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "todo-firebase"
+}
