@@ -1,14 +1,14 @@
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 import { CategorieScreen } from '../screens/CategorieScreen/CategorieScreen';
-import { NewTache } from '../vues/newTache';
+import { NewCategorieScreen } from '../screens/CategorieScreen/NewCategorieScreen';
 
 const Tab = createMaterialTopTabNavigator()
 
-export function TodoRouter() {
+export function CategorieRouter() {
     return (
         <Tab.Navigator tabBarPosition="bottom">
             <Tab.Screen name="Categorie" component={CategorieScreen} />
-            <Tab.Screen name="newTache" component={NewTache} />
+            <Tab.Screen name="New Categorie" component={NewCategorieScreen} />
         </Tab.Navigator>
     )
 }
