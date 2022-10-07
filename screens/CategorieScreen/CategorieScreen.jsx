@@ -5,19 +5,23 @@ import {getCategories} from "../../api/categorie";
 import {TodoContext} from "../../context";
 
 export function CategorieScreen({navigation}) {
-	const {user} = useContext(TodoContext);
+	const {user, setcategorie} = useContext(TodoContext);
 	const [categories, setCategories] = useState([]);
 
 	useEffect(() => {
 		const unsubscribe = navigation.addListener("focus", () => {
 			getCategories(user.uid).then((data) => {
-				setCategories(data);
+				console.log(data)
+				setCategories(data || []);
 			});
 		});
 		return unsubscribe;
 	}, [navigation]);
 
-	const onCategoriePress = () => {};
+	const onCategoriePress = (elem) => {
+		setcategorie(elem)
+		navigation.push('TodoRouter')
+	};
 
 	return (
 		<View style={styles.container}>
@@ -25,7 +29,7 @@ export function CategorieScreen({navigation}) {
 			<ScrollView style={{width: '100%'}}>
 				{categories.map((elem, key) => (
 					<TouchableOpacity key={key} style={styles.categorie} onPress={() => onCategoriePress(elem)}>
-						<Text>{elem}</Text>
+						<Text>{elem.name}</Text>
 					</TouchableOpacity>
 				))}
 			</ScrollView>

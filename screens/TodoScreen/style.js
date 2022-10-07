@@ -71,10 +71,5 @@ export default StyleSheet.create({
         alignItems: "center",
         justifyContent: 'center',
         width: '90%',
-    },
-    buttonContainer: {
-        width: '100%',
-        marginBottom: 20,
-        flexDirection: 'row'
     }
 })

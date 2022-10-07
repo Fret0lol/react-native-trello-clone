@@ -16,6 +16,7 @@ export function NewCategorieScreen({ navigation }) {
       addCategorie(user.uid, categoriesName).then(() => {
         alert('Successful categorie add !')
         navigation.navigate({name: 'Categorie'})
+        setCategorieName('')
       })
     }
 
